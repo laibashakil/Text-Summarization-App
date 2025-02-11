@@ -1,6 +1,5 @@
 # Text Summarization App
 
-## Overview
 This project is a Flask-based Text Summarization App that supports both extractive and abstractive summarization. It provides contextual filtering, adaptive summary generation, multi-format outputs, and text-to-speech functionality.
 
 ## Features
@@ -64,7 +63,7 @@ The app will be available at `http://127.0.0.1:5000/`.
 
 ## Folder Structure
 ```
-project-root/
+Text-Summarization-App/
 │── app.py               # Main Flask application
 │── templates/
 │   ├── index.html       # Frontend UI
