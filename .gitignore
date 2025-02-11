@@ -15,8 +15,8 @@ instance/
 *.db
 
 # Static files (generated content)
-static/summary.mp3
-static/*.mp3
+/static/audio/
+/summary.mp3
 
 # Temporary files
 *.tmp
