@@ -1,0 +1,10 @@
+Flask
+pyttsx3
+tempfile
+nltk
+textblob
+torch
+transformers
+numpy
+networkx
+scikit-learn
