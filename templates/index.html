@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Summarization App</title>
+</head>
+<body>
+    <h1>Text Summarization App</h1>
+    <form id="summary-form">
+        <label for="text">Text to summarize:</label><br>
+        <textarea id="text" name="text" rows="10" cols="50"></textarea><br>
+
+        <label for="num_sentences">Number of sentences:</label>
+        <input type="number" id="num_sentences" name="num_sentences" value="3"><br>
+
+        <label for="summary_type">Summary Type:</label>
+        <select id="summary_type">
+            <option>Extractive</option>
+            <option>Abstractive</option>
+        </select><br>
+
+        <label for="context_filter">Contextual Filter:</label>
+        <select id="context_filter">
+            <option>None</option>
+            <option>Negative Sentiment</option>
+            <option>Positive Sentiment</option>
+        </select><br>
+
+        <label for="output_format">Output Format:</label>
+        <select id="output_format">
+            <option>Text</option>
+            <option>JSON</option>
+            <option>Markdown</option>
+            <option>Voice</option>
+        </select><br>
+
+        <button type="button" onclick="submitSummary()">Summarize</button>
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        function submitSummary() {
+            const text = document.getElementById("text").value;
+            const num_sentences = document.getElementById("num_sentences").value;
+            const summary_type = document.getElementById("summary_type").value;
+            const context_filter = document.getElementById("context_filter").value;
+            const output_format = document.getElementById("output_format").value;
+
+            fetch('/summarize', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text, num_sentences, summary_type, context_filter, output_format })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.audio_file) {
+                    document.getElementById("response").innerHTML = `
+                        <p>${data.summary}</p>
+                        <audio controls src="/static/${data.audio_file}"></audio>`;
+                } else {
+                    document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
