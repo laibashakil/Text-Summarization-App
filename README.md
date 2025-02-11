@@ -87,6 +87,17 @@ Text-Summarization-App/
 │── README.md            # This file
 │── .gitignore           # Ignored files
 ```
+## Screenshots
+### 1️⃣ Application UI
+![image](https://github.com/user-attachments/assets/b87c3432-a862-4152-b679-091b89a3079a)
+
+### 2️⃣ Example Summary Outputs
+![image](https://github.com/user-attachments/assets/110cd00a-59c3-4bf3-9f13-7f97278dc330)
+![image](https://github.com/user-attachments/assets/e66b2201-e702-4f63-a684-6a2a2e1f7300)
+![image](https://github.com/user-attachments/assets/8b7fb638-754a-4fef-95f5-a8092145c7f9)
+
+### 3️⃣ API Usage via cURL
+![image](https://github.com/user-attachments/assets/df8e82e5-a36c-46d9-88e0-90690a26faba)
 
 ## Notes
 - The application dynamically generates an audio file for summaries with TTS enabled.
