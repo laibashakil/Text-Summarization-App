@@ -2,16 +2,30 @@
 
 This project is a Flask-based Text Summarization App that supports both extractive and abstractive summarization. It provides contextual filtering, adaptive summary generation, multi-format outputs, and text-to-speech functionality.
 
-## Features
-- **Extractive Summarization:** Uses the TextRank algorithm to extract key sentences from the input text.
-- **Abstractive Summarization:** Utilizes the Pegasus transformer model to generate rewritten summaries.
-- **Contextual Summarization:** Allows filtering by sentiment (positive/negative) before summarization.
-- **Adaptive Summary Generation:** Dynamically adjusts summaries based on input text structure and user-defined constraints.
-- **Multi-Format Output:** Supports text, JSON, and Markdown output.
-- **Text-to-Speech (TTS):** Converts summaries into speech and provides an audio file.
-- **User-Friendly UI:** A Bootstrap-powered web interface for easy interaction.
-- **API Endpoint:** Allows programmatic access with JSON requests and responses.
-- **Loading Spinner:** Displays a visual cue while processing the request.
+## **Features**
+
+### **Summarization Types**
+
+-   **Extractive Summarization:** Uses the **TextRank algorithm** (via `sumy`) to extract key sentences.
+-   **Abstractive Summarization:** Utilizes **Google's Pegasus Transformer Model** (`transformers` library) to generate rewritten summaries.
+
+### **Context-Aware Summarization**
+
+-   **Sentiment-Based Filtering:** Summaries can be filtered to show only **positive** or **negative** sentiments using `VADER Sentiment Analysis`.
+
+### **Output Formats**
+
+-   **Plain Text:** Standard text output.
+-   **JSON:** Structured output for API use.
+-   **Markdown:** Returns a formatted summary.
+-   **API Response:** Raw JSON output for direct API usage.
+
+### **Additional Features**
+
+-   **Text-to-Speech (TTS):** Converts the summary into speech using `gTTS` and provides an audio file.
+-   **Bootstrap UI:** A responsive and user-friendly web interface.
+-   **API Endpoint:** Programmatic access for automation.
+-   **Loading Spinner:** Displays a visual cue while processing.
 
 ## Setup Instructions
 
